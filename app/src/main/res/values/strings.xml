@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Trnng</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">GET DATA</string>
+    <string name="flower_name_placeholder"/>
+
+</resources>
