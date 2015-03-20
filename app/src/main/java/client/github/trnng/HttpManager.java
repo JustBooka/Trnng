@@ -1,11 +1,6 @@
 package client.github.trnng;
 
-import android.net.http.AndroidHttpClient;
 import android.util.Base64;
-
-import org.apache.http.HttpResponse;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.util.EntityUtils;
 
 import java.io.BufferedReader;
 import java.io.IOException;

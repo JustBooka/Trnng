@@ -18,6 +18,10 @@ import java.util.List;
 
 import client.github.trnng.model.Flower;
 import client.github.trnng.parser.FlowerJSONParser;
+import retrofit.Callback;
+import retrofit.RestAdapter;
+import retrofit.RetrofitError;
+import retrofit.client.Response;
 
 /**
  * Created by alexey.bukin on 18.03.2015.
@@ -26,11 +30,11 @@ public class MainActivity extends ListActivity {
 
 
     ProgressBar pb;
-    List<MyTask> tasks;
+//    List<MyTask> tasks;
 
     List<Flower> flowerList;
     public static final String PHOTOS_BASE_URL = "http://services.hanselandpetal.com/photos/";
-    public static final String ENDPOINT = "https://api.github.com";
+    public static final String ENDPOINT = "http://services.hanselandpetal.com";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +44,7 @@ public class MainActivity extends ListActivity {
         pb = (ProgressBar) findViewById(R.id.progressBar1);
         pb.setVisibility(View.INVISIBLE);
 
-        tasks = new ArrayList<>();
+//        tasks = new ArrayList<>();
 
         if (isOnline()) {
             requestData("http://services.hanselandpetal.com/secure/flowers.json");
@@ -71,16 +75,25 @@ public class MainActivity extends ListActivity {
 
     private void requestData(String uri) {
 
-        RequestPackage p = new RequestPackage();
-        p.setMethod("GET");
-        p.setUri(uri);
-        p.setParam("param1","Value 1");
-        p.setParam("param2","Value 2");
-        p.setParam("param3","Value 3");
-        p.setParam("param4","Value 4");
+        RestAdapter adapter = new RestAdapter.Builder()
+                .setEndpoint(ENDPOINT)
+                .build();
 
-        MyTask task = new MyTask();
-        task.execute(p);
+        FlowersAPI api = adapter.create(FlowersAPI.class);
+        api.getFeed(new Callback<List<Flower>>() {
+
+            @Override
+            public void success(List<Flower> arg0, Response arg1) {
+                flowerList = arg0;
+                updateDisplay();
+            }
+
+            @Override
+            public void failure(RetrofitError error) {
+
+            }
+        });
+
 
     }
 
@@ -102,46 +115,46 @@ public class MainActivity extends ListActivity {
 
     //-->asyncTask
 
-    private class MyTask extends AsyncTask<RequestPackage, String, List<Flower>> {
-
-        @Override
-        protected void onPreExecute() {
-            if (tasks.size() == 0) {
-                pb.setVisibility(View.VISIBLE);
-            }
-            tasks.add(this);
-        }
-
-        @Override
-        protected List<Flower> doInBackground(RequestPackage... params) {
-
-            String content = HttpManager.getData(params[0], "feeduser", "feedpassword");
-            flowerList = FlowerJSONParser.parseFeed(content);
-
-            return flowerList;
-        }
-
-        @Override
-        protected void onPostExecute(List<Flower> result) {
-
-            tasks.remove(this);
-            if (tasks.size() == 0) {
-                pb.setVisibility(View.INVISIBLE);
-            }
-
-            if (result == null){
-                Toast.makeText(MainActivity.this, "Can`t connect to web service", Toast.LENGTH_LONG).show();
-                return;
-            }
-//            flowerList = FlowerJSONParser.parseFeed(result);
-            updateDisplay();
-
-        }
-
-        @Override
-        protected void onProgressUpdate(String... values) {
-        }
-    }
+//    private class MyTask extends AsyncTask<RequestPackage, String, List<Flower>> {
+//
+//        @Override
+//        protected void onPreExecute() {
+//            if (tasks.size() == 0) {
+//                pb.setVisibility(View.VISIBLE);
+//            }
+//            tasks.add(this);
+//        }
+//
+//        @Override
+//        protected List<Flower> doInBackground(RequestPackage... params) {
+//
+//            String content = HttpManager.getData(params[0], "feeduser", "feedpassword");
+//            flowerList = FlowerJSONParser.parseFeed(content);
+//
+//            return flowerList;
+//        }
+//
+//        @Override
+//        protected void onPostExecute(List<Flower> result) {
+//
+//            tasks.remove(this);
+//            if (tasks.size() == 0) {
+//                pb.setVisibility(View.INVISIBLE);
+//            }
+//
+//            if (result == null){
+//                Toast.makeText(MainActivity.this, "Can`t connect to web service", Toast.LENGTH_LONG).show();
+//                return;
+//            }
+////            flowerList = FlowerJSONParser.parseFeed(result);
+//            updateDisplay();
+//
+//        }
+//
+//        @Override
+//        protected void onProgressUpdate(String... values) {
+//        }
+//    }
 
 
     //<--AsyncTaskEnd
