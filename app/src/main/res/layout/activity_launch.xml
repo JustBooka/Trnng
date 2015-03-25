@@ -30,4 +30,12 @@
         android:text="@string/saveState_training_activity"
         android:onClick="openActivity"/>
 
+    <Button
+        android:id="@+id/btn_toast_activity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/toast_training_activity"
+        android:onClick="openActivity"
+        android:layout_below="@+id/btn_savedInstanceState_activity" />
+
 </LinearLayout>

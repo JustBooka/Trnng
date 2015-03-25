@@ -4,8 +4,14 @@ import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.view.View;
+import android.widget.Toast;
 
+import java.io.File;
+import java.util.ArrayList;
+
+import client.github.trnng.L;
 import client.github.trnng.R;
 
 /**
@@ -53,8 +59,24 @@ public class IntentTrnngActivity extends Activity {
             intent = new Intent(Intent.ACTION_SEND);
             intent.setType("image/*");
             intent.putExtra(Intent.EXTRA_STREAM, imageUri);
-            intent.putExtra(Intent.EXTRA_TEXT,"image attached");
-            chooser=Intent.createChooser(intent,"Send Image");
+            intent.putExtra(Intent.EXTRA_TEXT, "image attached");
+            chooser = Intent.createChooser(intent, "Send Image");
+            startActivity(chooser);
+        }
+
+        if (v.getId() == R.id.sendImages) {
+            File pictures = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
+            String[] listOfPictures = pictures.list();
+            Uri uri = null;
+            ArrayList<Uri> arrayList=new ArrayList<Uri>();
+            for (String picture : listOfPictures) {
+                uri = Uri.parse("file://" + picture.toString() + "/" + picture);
+                arrayList.add(uri);
+            }
+            intent = new Intent(Intent.ACTION_SEND_MULTIPLE);
+            intent.setType("image/*");
+            intent.putExtra(Intent.EXTRA_STREAM,arrayList);
+            chooser=Intent.createChooser(intent,"Send Multiply images");
             startActivity(chooser);
         }
     }

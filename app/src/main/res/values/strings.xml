@@ -9,4 +9,6 @@
     <string name="button_training_activity">ButtonTraining</string>
     <string name="intent_training_activity">Intent</string>
     <string name="saveState_training_activity">saveInstanceState</string>
+    <string name="toast_training_activity">Toast</string>
+    <string name="customToast_activity">Custom Toast</string>
 </resources>

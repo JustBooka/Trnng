@@ -8,9 +8,21 @@
                 android:paddingRight="@dimen/activity_horizontal_margin"
                 android:paddingTop="@dimen/activity_vertical_margin">
 
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
     <Button
         android:id="@+id/btn_map_launch"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="intentLaunch"
         android:text="Launch MAP"
@@ -22,7 +34,7 @@
 
     <Button
         android:id="@+id/btn_store_launch"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="intentLaunch"
         android:text="Launch Google Play"
@@ -34,7 +46,7 @@
 
     <Button
         android:id="@+id/btn_email_launch"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="intentLaunch"
         android:text="Launch Email client"
@@ -46,7 +58,7 @@
 
     <Button
         android:id="@+id/sendImage"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="intentLaunch"
         android:text="Send Image"
@@ -55,5 +67,19 @@
         android:layout_alignParentStart="true"
         android:layout_alignRight="@+id/btn_email_launch"
         android:layout_alignEnd="@+id/btn_email_launch"/>
+
+    <Button
+        android:id="@+id/sendImages"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="intentLaunch"
+        android:text="Send Images"
+        android:layout_below="@+id/sendImage"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/sendImage"
+        android:layout_alignEnd="@+id/sendImage"/>
+        </LinearLayout>
+    </ScrollView>
 
 </RelativeLayout>

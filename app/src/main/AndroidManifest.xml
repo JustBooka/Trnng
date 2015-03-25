@@ -37,6 +37,18 @@
             android:label="@string/saveState_training_activity">
 
         </activity>
+
+        <activity
+            android:name=".activity.ToastActivity"
+            android:label="@string/toast_training_activity">
+
+        </activity>
+
+        <activity
+            android:name=".customToast"
+            android:label="@string/customToast_activity">
+
+        </activity>
     </application>
 
     <uses-permission android:name="android.permission.ACCOUNT_MANAGER"/>

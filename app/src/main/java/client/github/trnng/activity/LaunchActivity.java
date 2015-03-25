@@ -47,6 +47,12 @@ public class LaunchActivity extends Activity implements View.OnClickListener{
             Intent intent = new Intent(this, saveStateActivity.class);
             startActivity(intent);
         }
+
+        if (v.getId() == R.id.btn_toast_activity)
+        {
+            Intent intent = new Intent(this, ToastActivity.class);
+            startActivity(intent);
+        }
     }
 
     @Override
