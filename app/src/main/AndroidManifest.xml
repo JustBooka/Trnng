@@ -1,20 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="client.github.trnng" >
+<manifest
+    package="client.github.trnng"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
-            android:label="@string/app_name" >
+            android:name=".activity.LaunchActivity"
+            android:label="@string/app_name">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.MainActivity"
+            android:label="@string/flower_activity">
+        </activity>
+        <activity
+            android:name=".activity.ButtonTrnngActivity"
+            android:label="@string/button_training_activity">
+
+        </activity>
+        <activity
+            android:name=".activity.IntentTrnngActivity"
+            android:label="@string/intent_training_activity">
+
+        </activity>
+        <activity
+            android:name=".activity.saveStateActivity"
+            android:label="@string/saveState_training_activity">
+
         </activity>
     </application>
 

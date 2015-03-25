@@ -5,5 +5,8 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">GET DATA</string>
     <string name="flower_name_placeholder"/>
-
+    <string name="flower_activity">Flowers</string>
+    <string name="button_training_activity">ButtonTraining</string>
+    <string name="intent_training_activity">Intent</string>
+    <string name="saveState_training_activity">saveInstanceState</string>
 </resources>

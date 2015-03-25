@@ -1,23 +1,22 @@
-package client.github.trnng;
+package client.github.trnng.activity;
 
 import android.app.ListActivity;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ProgressBar;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
 import java.util.List;
 
+import client.github.trnng.FlowerAdapter;
+import client.github.trnng.FlowersAPI;
+import client.github.trnng.R;
 import client.github.trnng.model.Flower;
-import client.github.trnng.parser.FlowerJSONParser;
 import retrofit.Callback;
 import retrofit.RestAdapter;
 import retrofit.RetrofitError;
