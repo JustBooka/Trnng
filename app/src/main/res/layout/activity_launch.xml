@@ -6,26 +6,26 @@
 
     <Button
         android:id="@+id/btn_flwr_activity"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/flower_activity"
         android:onClick="openActivity"/>
     <Button
         android:id="@+id/btn_btn_activity"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/button_training_activity"
         android:onClick="openActivity"/>
     <Button
         android:id="@+id/btn_intent_activity"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/intent_training_activity"
         android:onClick="openActivity"/>
 
     <Button
         android:id="@+id/btn_savedInstanceState_activity"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/saveState_training_activity"
         android:onClick="openActivity"/>

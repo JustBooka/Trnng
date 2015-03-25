@@ -44,4 +44,16 @@
         android:layout_alignRight="@+id/btn_store_launch"
         android:layout_alignEnd="@+id/btn_store_launch"/>
 
+    <Button
+        android:id="@+id/sendImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="intentLaunch"
+        android:text="Send Image"
+        android:layout_below="@+id/btn_email_launch"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/btn_email_launch"
+        android:layout_alignEnd="@+id/btn_email_launch"/>
+
 </RelativeLayout>
