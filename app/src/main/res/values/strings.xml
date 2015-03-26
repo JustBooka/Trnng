@@ -11,4 +11,5 @@
     <string name="saveState_training_activity">saveInstanceState</string>
     <string name="toast_training_activity">Toast</string>
     <string name="customToast_activity">Custom Toast</string>
+    <string name="calculate_activity">Calculate</string>
 </resources>

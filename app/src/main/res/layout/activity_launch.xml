@@ -38,4 +38,13 @@
         android:onClick="openActivity"
         android:layout_below="@+id/btn_savedInstanceState_activity" />
 
+    <Button
+        android:id="@+id/btn_calculate_activity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/calculate_activity"
+        android:onClick="openActivity"
+        android:layout_below="@+id/btn_toast_activity" />
+
+
 </LinearLayout>

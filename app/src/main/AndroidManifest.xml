@@ -49,6 +49,12 @@
             android:label="@string/customToast_activity">
 
         </activity>
+
+        <activity
+            android:name=".activity.CalculateActivity"
+            android:label="@string/calculate_activity">
+
+        </activity>
     </application>
 
     <uses-permission android:name="android.permission.ACCOUNT_MANAGER"/>
