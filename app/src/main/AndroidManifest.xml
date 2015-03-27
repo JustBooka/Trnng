@@ -52,6 +52,19 @@
 
         <activity
             android:name=".activity.CalculateActivity"
+            android:label="@string/calculate_activity"
+            android:screenOrientation="landscape">
+
+        </activity>
+
+        <activity
+            android:name=".activity.UiTrnngActivity"
+            android:label="@string/calculate_activity">
+
+        </activity>
+
+        <activity
+            android:name=".activity.FBUiActivity"
             android:label="@string/calculate_activity">
 
         </activity>

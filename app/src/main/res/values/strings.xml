@@ -12,4 +12,6 @@
     <string name="toast_training_activity">Toast</string>
     <string name="customToast_activity">Custom Toast</string>
     <string name="calculate_activity">Calculate</string>
-</resources>
+    <string name="UI_trnng">UI training</string>
+    <string name="fb_ui_example">FB UI</string>
+    </resources>

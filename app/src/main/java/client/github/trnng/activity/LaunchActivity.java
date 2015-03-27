@@ -54,9 +54,9 @@ public class LaunchActivity extends Activity implements View.OnClickListener{
             startActivity(intent);
         }
 
-        if (v.getId() == R.id.btn_calculate_activity)
+        if (v.getId() == R.id.btn_ui_trainig_activity)
         {
-            Intent intent = new Intent(this, CalculateActivity.class);
+            Intent intent = new Intent(this, UiTrnngActivity.class);
             startActivity(intent);
         }
     }
